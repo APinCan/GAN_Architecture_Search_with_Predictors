@@ -3,7 +3,7 @@
 CUDA_VISIBLE_DEVICES=0 python3 train_derived.py \
 -gen_bs 128 \
 -dis_bs 64 \
---dataset cifar100 \
+--dataset cifar10 \
 --bottom_width 4 \
 --img_size 32 \
 --max_iter 150000 \
@@ -22,4 +22,4 @@ CUDA_VISIBLE_DEVICES=0 python3 train_derived.py \
 --n_critic 5 \
 --val_freq 20 \
 --arch 0 0 0 0 1 0 0 0 0 1 0 0 0 3 \
---exp_name TestRepo
+--exp_name eval_result
