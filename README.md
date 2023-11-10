@@ -1,5 +1,17 @@
 # GAN_Architecture_Search_with_Predictors
 
+## Dependencies
+```bash
+conda create --n autogan-dsp python=3.6
+conda activate autogan-dsp
+
+pip install torch==1.4.0 torchvision==0.5.0
+
+pip install imageio scipy six numpy==1.18.1 python-dateutil==2.7.3 tensorboardX==1.6 tensorflow-gpu==1.13.1 tqdm==4.29.1
+pip install pandas
+
+```
+
 ## FID statistic files
 You can download pre-caculated FID statisc files ( [Link](https://drive.google.com/drive/folders/1JGODyX1ekDzlhpWbeknir0OYv_TqMT9e?usp=sharing)) to `./search/fid_stat` and `./eval/fid_stat`. 
 
