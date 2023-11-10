@@ -6,6 +6,8 @@ You can download pre-caculated FID statisc files ( [Link](https://drive.google.c
 ## Dataset
 You can download ImageNet 32x32 data [Link] to `./eval/data`.
 
+## Pre-trained model
+We also provide pre-trained model of our discovered architectures [Link](https://drive.google.com/drive/folders/1yVCK0tWekuIi0fmPGSy235wqYGEVwwWF?usp=sharing) to `./eval/pre-trained`
 
 ## Acknowledges
 1. Inception Score code from [OpenAI's Improved GAN](https://github.com/openai/improved-gan/tree/master/inception_score) (official).
