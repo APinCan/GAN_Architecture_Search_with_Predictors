@@ -3,6 +3,9 @@
 ## FID statistic files
 You can download pre-caculated FID statisc files ( [Link](https://drive.google.com/drive/folders/1JGODyX1ekDzlhpWbeknir0OYv_TqMT9e?usp=sharing)) to `./search/fid_stat` and `./eval/fid_stat`. 
 
+## Dataset
+You can download ImageNet 32x32 data [Link] to `./eval/data`.
+
 
 ## Acknowledges
 1. Inception Score code from [OpenAI's Improved GAN](https://github.com/openai/improved-gan/tree/master/inception_score) (official).
