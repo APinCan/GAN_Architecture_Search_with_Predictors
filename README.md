@@ -28,7 +28,7 @@ sh exps/search.sh
 ```
 discovered architectures stored in `./logs/{exp_name}/architectures.csv`
 
-# Evaluation
+## Evaluation
 You can replace `--arch` in .sh file to the other discovered architecture.
 ```
 cd eval
