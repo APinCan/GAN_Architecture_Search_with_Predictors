@@ -161,6 +161,7 @@ def main():
     train_flag = True
     predictor_epoch = 5
 
+    arch_df = pd.DataFrame(columns=['iterations', 'architecture'])
 
     for search_iter in tqdm(range(int(start_search_iter), 100), desc='search progress'):
         logger.info(f"<start search iteration {search_iter}>")
@@ -318,7 +319,13 @@ def main():
                 fid_prev_hiddens = (fid_hidden[0].detach(), fid_hidden[1].detach())
 
 
+
             last_arch += cur_arch
+            if not train_flag and layer==2:
+                for_df = {}
+                for_df['iterations'] = search_iter+1
+                for_df['architecture'] = str(last_arch)
+
 
             # if layer !=2:
             dynamic_reset = train_qin(args, gen_net, dis_net, g_loss_history, d_loss_history, gen_optimizer,
@@ -353,12 +360,14 @@ def main():
         writer.add_scalar('optimizing/entropy', outinfo['entropy'], search_iter)
         writer.add_scalar('optimizing/a_loss', outinfo['a_loss'], search_iter)
 
+        arch_df = arch_df.append(for_df, ignore_index=True)
+
         # Clean up and start a new trajectory from scratch
         del gen_net, dis_net, gen_optimizer, dis_optimizer
         gen_net, dis_net, gen_optimizer, dis_optimizer = create_shared_gan(args, weights_init)
         WARMUP=False
 
-
+    arch_df.to_csv(os.path.join(args.path_helper['prefix'], 'architectures.csv'), float_format='%.4f', index=False)
 
 if __name__ == '__main__':
     main()
