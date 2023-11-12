@@ -21,6 +21,24 @@ You can download ImageNet 32x32 data [Link] to `./eval/data`.
 ## Pre-trained model
 We also provide pre-trained model of our discovered architectures [Link](https://drive.google.com/drive/folders/1yVCK0tWekuIi0fmPGSy235wqYGEVwwWF?usp=sharing) to `./eval/pre-trained`
 
+## Search
+```
+cd search
+sh exps/search.sh
+```
+discovered architectures stored in `./logs/{exp_name}/architectures.csv`
+
+# Evaluation
+You can replace `--arch` in .sh file to the other discovered architecture.
+```
+cd eval
+sh exps/eval.sh
+```
+and test
+```
+sh exps/test_arch.sh
+```
+
 ## Acknowledges
 1. Inception Score code from [OpenAI's Improved GAN](https://github.com/openai/improved-gan/tree/master/inception_score) (official).
 2. FID code and CIFAR-10 statistics file from [https://github.com/bioinf-jku/TTUR](https://github.com/bioinf-jku/TTUR) (official).
